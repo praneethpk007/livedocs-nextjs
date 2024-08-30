@@ -7,9 +7,9 @@ type HeaderProps = {
   className?: string;
 };
 
-const Header = ({ children }: HeaderProps) => {
+const Header = ({ children, className }: HeaderProps) => {
   return (
-    <div className="header">
+    <div className={`header ${className}`}>
       <Link href={`/`}>
         <Image
           src="/assets/icons/logo.svg"
