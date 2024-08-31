@@ -104,7 +104,7 @@ export const getDocuments = async (email: string) => {
     const rooms = await liveblocks.getRooms({
       userId: email,
     });
-    // const hasAccess = Object.keys(room.usersAccesses).includes(userId);
+    // const hasAccess = Object.keys(rooms.data).includes(userId);
 
     // if (!hasAccess) {
     //   throw new Error("You do not have access to this document");

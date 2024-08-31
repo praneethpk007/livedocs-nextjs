@@ -47,7 +47,7 @@ export const getClerkUsersFromId = async ({
       .map((id) => userMap.get(id))
       .filter((user) => user !== undefined);
 
-    console.log("data: ", sortedUsers);
+    // console.log("data: ", sortedUsers);
 
     return parseStringify(sortedUsers);
   } catch (error) {
@@ -67,6 +67,8 @@ export const getDocumentUsers = async ({
   try {
     const room = await liveblocks.getRoom(roomId);
 
+    console.log("room: ", room);
+
     const users = Object.keys(room.usersAccesses).filter(
       (email) => email !== currentUser
     );
@@ -77,6 +79,8 @@ export const getDocumentUsers = async ({
       const filteredUsers = users.filter((email) =>
         email.toLowerCase().includes(lowerText)
       );
+
+      console.log("filteredUsers: ", filteredUsers);
 
       return parseStringify(filteredUsers);
     }
