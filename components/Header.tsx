@@ -1,3 +1,4 @@
+import { cn } from "@/lib/utils";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
@@ -9,7 +10,7 @@ type HeaderProps = {
 
 const Header = ({ children, className }: HeaderProps) => {
   return (
-    <div className={`header ${className}`}>
+    <div className={cn("header", className)}>
       <Link href={`/`}>
         <Image
           src="/assets/icons/logo.svg"
