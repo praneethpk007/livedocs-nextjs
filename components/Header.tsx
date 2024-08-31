@@ -1,27 +1,21 @@
-import { cn } from "@/lib/utils";
-import Image from "next/image";
-import Link from "next/link";
-import React from "react";
-
-type HeaderProps = {
-  children: React.ReactNode;
-  className?: string;
-};
+import { cn } from '@/lib/utils'
+import Image from 'next/image'
+import Link from 'next/link'
 
 const Header = ({ children, className }: HeaderProps) => {
   return (
     <div className={cn("header", className)}>
-      <Link href={`/`}>
-        <Image
+      <Link href='/' className="md:flex-1">
+        <Image 
           src="/assets/icons/logo.svg"
-          alt="LiveDocs"
+          alt="Logo with name"
           width={120}
           height={32}
           className="hidden md:block"
         />
-        <Image
+        <Image 
           src="/assets/icons/logo-icon.svg"
-          alt="LiveDocs"
+          alt="Logo"
           width={32}
           height={32}
           className="mr-2 md:hidden"
@@ -29,7 +23,7 @@ const Header = ({ children, className }: HeaderProps) => {
       </Link>
       {children}
     </div>
-  );
-};
+  )
+}
 
-export default Header;
+export default Header
